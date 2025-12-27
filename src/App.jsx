@@ -1,34 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import TaskBoard from './components/TaskBoard'
+import QuotePanel from './components/QuotePanel'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+    <div className="app-shell">
+      <header className="hero">
+        <p className="eyebrow">React test playground</p>
+        <h1>Vitest + Testing Library + happy-dom</h1>
+        <p className="lede">
+          Bileşen, snapshot, custom hook ve API testlerini aynı küçük uygulama
+          üstünde deneyebileceğiniz basit bir altyapı.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </header>
+
+      <section className="grid">
+        <TaskBoard />
+        <QuotePanel />
+      </section>
+    </div>
   )
 }
 
